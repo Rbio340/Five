@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación Romántica al Cine</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .card {
+        background: white;
+        width: 90%;
+        max-width: 600px;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hearts, .hearts2 {
+        position: absolute;
+        opacity: 0.15;
+    }
+
+    .hearts {
+        top: -20px;
+        left: -20px;
+        width: 100px;
+    }
+
+    .hearts2 {
+        bottom: -20px;
+        right: -20px;
+        width: 120px;
+    }
+
+    h1 {
+        margin-top: 10px;
+        font-size: 28px;
+        color: #d94663;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: -10px;
+        color: #6b6b6b;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .poster {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 15px;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.20);
+    }
+
+    .details {
+        margin: 25px 0;
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .details p {
+        background: #ffe6eb;
+        padding: 12px 20px;
+        border-radius: 12px;
+        color: #d54a63;
+        font-weight: 600;
+        margin-bottom: 10px;
+        border: 1px solid #ffd0db;
+    }
+
+    .message {
+        margin-top: 25px;
+        font-size: 16px;
+        color: #555;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        margin-top: 30px;
+        padding: 12px 25px;
+        background: #d94663;
+        color: white;
+        font-size: 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(217,70,99,0.4);
+        transition: 0.2s;
+    }
+
+    .btn:hover {
+        background: #c53e59;
+        transform: translateY(-2px);
+    }
+
+    /* POPUP */
+    .popup-bg {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .popup {
+        background: #fff0f5;
+        padding: 30px;
+        border-radius: 15px;
+        width: 80%;
+        max-width: 350px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        animation: fadeIn 0.4s ease;
+    }
+
+    .popup h2 {
+        color: #d94663;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .popup p {
+        color: #c1445a;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .popup button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #d94663;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from {transform: scale(0.6); opacity: 0;}
+        to {transform: scale(1); opacity: 1;}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" class="hearts">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" class="hearts2">
+
+    <h1>💗 Invitación Especial 💗</h1>
+    <p class="subtitle">Tengo un plan contigo…</p>
+
+    <img class="poster" src="https://www.supercines.com/MovieImages/20251113Mov003/xxhdpi.jpg" alt="Poster FNAF 2">
+
+    <div class="details">
+        <p>📅 Fecha: <strong>12 de diciembre</strong></p>
+        <p>⏰ Hora: <strong>8:30 pm</strong></p>
+        <p>🎬 Película: <strong>Five Nights at Freddy’s 2</strong></p>
+        <p>📍 Lugar: <strong>Cinemark</strong></p>
+    </div>
+
+    <p class="message">
+        Quiero compartir esta noche contigo.  
+        No importa si la película da miedo…  
+        <b>porque quiero que te acerques a mí. 💗</b>
+        <br><br>
+        ¿Aceptas venir al cine conmigo?
+    </p>
+
+    <button class="btn" onclick="mostrarPopup()">Sí, claro que sí 💞</button>
+</div>
+
+<div class="popup-bg" id="popupFondo">
+    <div class="popup">
+        <h2>💞 Te amo 💞</h2>
+        <p>Te amo muchooo mi nena ❤️</p>
+        <button onclick="cerrarPopup()">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup() {
+        document.getElementById("popupFondo").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popupFondo").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
